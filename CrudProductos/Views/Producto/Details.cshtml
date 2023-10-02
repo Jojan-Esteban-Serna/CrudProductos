@@ -5,33 +5,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalles</h1>
+<h1 class="d-flex justify-content-center align-items-center">Detalles</h1>
+<h4 class="d-flex justify-content-center align-items-center">Producto</h4>
+    <hr/>
+<div class="d-flex justify-content-center align-items-center">
+    
+    <div class="d-flex flex-column justify-content-center align-items-center p-3">
+        <div class="row d-flex justify-content-center align-items-center w-40 ">
+            <h4 class="d-flex justify-content-center align-items-center">
+                @Html.DisplayNameFor(model => model.Nombre):
+            </h4>
+            <p class="d-flex justify-content-center align-items-center">
+                @Html.DisplayFor(model => model.Nombre)
+            </p>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center w-40">
+            <h4 class="d-flex justify-content-center align-items-center">
+                @Html.DisplayNameFor(model => model.Descripcion):
+            </h4>
+            <p class="d-flex justify-content-center align-items-center">
+                @Html.DisplayFor(model => model.Descripcion)
+            </p>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center w-40 ">
+            <h4 class="d-flex justify-content-center align-items-center">
+                @Html.DisplayNameFor(model => model.Precio):
+            </h4>
+            <p class="d-flex justify-content-center align-items-center">
+                @Html.DisplayFor(model => model.Precio)
+            </p>
+        </div>
+        <div>
 
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-    </dl>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
-    <a asp-action="Index">Volver a la lista</a>
+<div class="d-flex justify-content-center align-items-center" >
+    <a  class="btn btn-outline-success m-2" asp-action="Edit" asp-route-id="@Model?.Id">Editar</a>
+    <a class="btn btn-outline-info" asp-action="Index">Volver a la lista</a>
 </div>
